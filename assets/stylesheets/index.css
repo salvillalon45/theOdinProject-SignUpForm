@@ -1,0 +1,89 @@
+/* Color */
+/* -------------------------------------- */
+:root {
+	--text: #1e1f1f;
+	--label: #7f858d;
+	--button: #596d48;
+	--default-input-border: ##e5e7eb;
+	--right-background: #f9fafb;
+}
+
+/* Layout of Pages */
+/* -------------------------------------- */
+html,
+body {
+	box-sizing: border-box;
+	height: 100%;
+}
+
+/*
+  From Wesbos CSS Grid Course
+  We inherit box-sizing: border-box; from our <html> selector
+  Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
+*/
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	/* min-height: calc(100vh - 100px); */
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+main {
+	display: grid;
+	grid-template-areas: 'left left right right right';
+	height: 100vh;
+}
+
+main .left {
+	/* Layout */
+	grid-area: left;
+
+	/* Bck Image */
+	background-image: url('../images/cover1.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	/* Organize Logo Container and Credits */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.logo-container {
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	font-family: Norse;
+}
+
+.logo-container img {
+	max-width: 100%;
+	height: 10vh;
+}
+
+.logo-container h1 {
+	font-size: 4rem;
+}
+
+.left p {
+	position: relative;
+	top: 21%;
+	margin: 0 auto;
+}
+
+main .right {
+	grid-area: right;
+}
