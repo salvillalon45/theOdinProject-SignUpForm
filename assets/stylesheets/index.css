@@ -14,6 +14,7 @@ html,
 body {
 	box-sizing: border-box;
 	height: 100%;
+	font-family: 'Open Sans', sans-serif;
 }
 
 /*
@@ -54,9 +55,11 @@ main .left {
 	background-repeat: no-repeat;
 
 	/* Organize Logo Container and Credits */
-	display: flex;
+	/* display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: space-around; */
+	display: grid;
+	align-items: center;
 }
 
 .logo-container {
@@ -67,23 +70,136 @@ main .left {
 	background-color: rgba(0, 0, 0, 0.5);
 	color: #fff;
 	font-family: Norse;
+
+	padding: 0.5rem;
 }
 
 .logo-container img {
 	max-width: 100%;
-	height: 10vh;
+	height: 14vh;
 }
 
 .logo-container h1 {
 	font-size: 4rem;
+	align-self: center;
 }
 
 .left p {
 	position: relative;
-	top: 21%;
+	top: 45%;
 	margin: 0 auto;
+
+	color: #fff;
 }
 
+.left a,
+.left p {
+	color: #fff;
+	font-size: 0.8rem;
+}
+
+/* ---------------------------------- */
 main .right {
+	/* Area to be placed */
 	grid-area: right;
+
+	background-color: var(--right-background);
+
+	/* Layout right side */
+	display: grid;
+	align-items: center;
+}
+
+.intro-section {
+	display: grid;
+	gap: 1.5rem;
+	justify-content: center;
+
+	margin: 0 auto;
+	margin-left: 2.5rem;
+}
+
+.intro-section > div {
+	display: grid;
+	gap: 0.5rem;
+	width: 70%;
+}
+
+.form-section {
+	background-color: #fff;
+}
+
+.form-section > div {
+	display: grid;
+	gap: 1.5rem;
+	margin-left: 2.5rem;
+
+	padding-top: 1.938rem;
+	padding-bottom: 1.938rem;
+}
+
+form {
+	/* For layout the entire form */
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 2rem;
+	width: 58%;
+}
+
+.left-inputs,
+.right-inputs {
+	display: grid;
+	gap: 1rem;
+}
+
+label {
+	display: grid;
+	gap: 0.1rem;
+	text-transform: uppercase;
+}
+
+/* --------------------------------- */
+.user-actions-section {
+	display: grid;
+	justify-items: left;
+	gap: 1.5rem;
+
+	margin-left: 2.5rem;
+}
+
+@media only screen and (max-width: 426px) {
+	main {
+		grid-template-areas:
+			'left left left'
+			'right right right';
+	}
+
+	.intro-section,
+	.user-actions-section {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	main .left {
+		height: 50vh;
+	}
+
+	.left p {
+		top: 30%;
+	}
+
+	.intro-section {
+		justify-items: center;
+		margin-left: unset;
+		text-align: center;
+	}
+
+	.form-section > div {
+		margin: 0 auto;
+		justify-content: center;
+	}
+
+	.user-actions-section {
+		justify-items: center;
+	}
 }

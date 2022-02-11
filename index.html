@@ -7,6 +7,12 @@
 		<title>The Odin Project: Sign Up Form</title>
 		<link rel="stylesheet" href="./assets/stylesheets/reset.css" />
 		<link rel="stylesheet" href="./assets/stylesheets/index.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
 		<div class="wrapper">
@@ -24,69 +30,91 @@
 				</div>
 
 				<article class="right">
-					<section>
-						<h2>
-							This is not a real service! You know you need
-							something like this in your life to help you realize
-							your deepest dreams . Sign up
-							<i>now</i>
-							to get started.
-						</h2>
+					<section class="intro-section">
+						<div>
+							<h2>
+								This is not a real service! You know you need
+								something like this in your life to help you
+								realize your deepest dreams.
+							</h2>
+
+							<p>
+								Sign up
+								<i>now</i>
+								to get started.
+							</p>
+						</div>
+
 						<p>You <i>know</i> you want to</p>
 					</section>
 
-					<section>
-						<h2>Let's do this!</h2>
-						<form action="">
-							<div class="input-wrapper">
+					<section class="form-section">
+						<div>
+							<h2>Let's do this!</h2>
+
+							<form action="">
 								<div class="left-inputs">
-									<label for="first-name">First Name</label>
-									<input
-										type="text"
-										id="first-name"
-										name="first-name"
-									/>
+									<label for="first-name"
+										>First Name
+										<input
+											type="text"
+											id="first-name"
+											name="first-name"
+										/>
+									</label>
 
-									<label for="email">Email</label>
-									<input
-										type="text"
-										id="email"
-										name="email"
-									/>
+									<label for="email">
+										Email
+										<input
+											type="text"
+											id="email"
+											name="email"
+										/>
+									</label>
 
-									<label for="password">Password</label>
-									<input
-										type="password"
-										id="password"
-										name="password"
-									/>
+									<label for="password">
+										Password
+										<input
+											type="password"
+											id="password"
+											name="password"
+										/>
+									</label>
 								</div>
 
 								<div class="right-inputs">
-									<label for="last-name">Last Name</label>
-									<input
-										type="text"
-										id="last-name"
-										name="last-name"
-									/>
+									<label for="last-name">
+										Last Name
+										<input
+											type="text"
+											id="last-name"
+											name="last-name"
+										/>
+									</label>
 
-									<label for="phone">Phone Number</label>
-									<input type="tel" id="phone" name="phone" />
+									<label for="phone">
+										Phone Number
+										<input
+											type="tel"
+											id="phone"
+											name="phone"
+										/>
+									</label>
 
-									<label for="confirm-password"
-										>Confirm Password</label
-									>
-									<input
-										type="text"
-										id="confirm-password"
-										name="confirm-password"
-									/>
+									<label for="confirm-password">
+										Confirm Password
+										<input
+											type="text"
+											id="confirm-password"
+											name="confirm-password"
+										/>
+									</label>
 								</div>
-							</div>
-						</form>
+							</form>
+						</div>
 					</section>
 
-					<section>
+					<section class="user-actions-section">
 						<button>Create Account</button>
 
 						<p>Already have an account? <a href="#">Log In</a></p>
