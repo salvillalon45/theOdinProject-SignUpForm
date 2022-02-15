@@ -1,10 +1,10 @@
 /* Color */
 /* -------------------------------------- */
 :root {
-	--text: #1e1f1f;
+	--black: #1e1f1f;
 	--label: #7f858d;
-	--button: #596d48;
-	--default-input-border: ##e5e7eb;
+	--green: #596d48;
+	--default-input-border: #e5e7eb;
 	--right-background: #f9fafb;
 }
 
@@ -15,6 +15,7 @@ body {
 	box-sizing: border-box;
 	height: 100%;
 	font-family: 'Open Sans', sans-serif;
+	color: var(--black);
 }
 
 /*
@@ -28,24 +29,28 @@ body {
 	box-sizing: inherit;
 }
 
-body {
-	display: flex;
-	flex-direction: column;
-	/* min-height: calc(100vh - 100px); */
+em,
+i,
+dfn {
+	font-style: italic;
 }
 
-main {
-	flex: 1 0 auto;
-}
-
+/* Layout for Left and Right Side */
+/* ---------------------------------- */
 main {
 	display: grid;
 	grid-template-areas: 'left left right right right';
+	/* 
+		100vh this is used to make entire main element take entire viewport screen. So that background image 
+		can take up all the space
+	*/
 	height: 100vh;
 }
 
+/* Left Side Layout */
+/* ---------------------------------- */
 main .left {
-	/* Layout */
+	/* Area to be placed */
 	grid-area: left;
 
 	/* Bck Image */
@@ -55,13 +60,12 @@ main .left {
 	background-repeat: no-repeat;
 
 	/* Organize Logo Container and Credits */
-	/* display: flex;
-	flex-direction: column;
-	justify-content: space-around; */
 	display: grid;
 	align-items: center;
 }
 
+/* Left Side Content */
+/* ---------------------------------- */
 .logo-container {
 	display: flex;
 	justify-content: center;
@@ -88,8 +92,6 @@ main .left {
 	position: relative;
 	top: 45%;
 	margin: 0 auto;
-
-	color: #fff;
 }
 
 .left a,
@@ -98,6 +100,7 @@ main .left {
 	font-size: 0.8rem;
 }
 
+/* Right Side Layout */
 /* ---------------------------------- */
 main .right {
 	/* Area to be placed */
@@ -110,6 +113,8 @@ main .right {
 	align-items: center;
 }
 
+/* Intro Section (First Row) */
+/* ---------------------------------- */
 .intro-section {
 	display: grid;
 	gap: 1.5rem;
@@ -117,6 +122,8 @@ main .right {
 
 	margin: 0 auto;
 	margin-left: 2.5rem;
+
+	font-weight: 600;
 }
 
 .intro-section > div {
@@ -125,8 +132,12 @@ main .right {
 	width: 70%;
 }
 
+/* Form Section (Second Row) */
+/* ---------------------------------- */
 .form-section {
 	background-color: #fff;
+	/* Borrowed from Tailwindcss styling of box-shadow: https://tailwindcss.com/docs/box-shadow#basic-usage */
+	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 .form-section > div {
@@ -136,6 +147,10 @@ main .right {
 
 	padding-top: 1.938rem;
 	padding-bottom: 1.938rem;
+}
+
+.form-section h2 {
+	font-weight: 900;
 }
 
 form {
@@ -155,16 +170,81 @@ form {
 label {
 	display: grid;
 	gap: 0.1rem;
+
+	color: var(--black);
+	font-family: 'Open Sans';
+	font-size: 0.75rem;
+	font-weight: 600;
 	text-transform: uppercase;
 }
 
-/* --------------------------------- */
+input {
+	border: 1px solid var(--default-input-border);
+}
+
+input[name='last-name'] {
+	border-radius: 1px;
+	border: 1px solid blue;
+	/* Borrowed from tailwind css: https://tailwindcss.com/docs/box-shadow */
+	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+input:invalid {
+	border-color: red;
+}
+
+label[for='password'] span {
+	color: red;
+	font-size: smaller;
+	font-weight: normal;
+	text-transform: capitalize;
+}
+
+/* User Actions Section (Third Row) */
+/* ---------------------------------- */
 .user-actions-section {
 	display: grid;
 	justify-items: left;
 	gap: 1.5rem;
 
 	margin-left: 2.5rem;
+}
+
+button {
+	border: none;
+	padding: 0.7rem;
+	border-radius: 0.3rem;
+	width: 9rem;
+	color: white;
+	background-color: var(--green);
+	font-weight: bolder;
+}
+
+.user-actions-section a {
+	color: var(--green);
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/* Media Queries Used for 1024, 768, and 425 viewports */
+/* ---------------------------------- */
+@media only screen and (max-width: 1024px) {
+	.left p {
+		margin-left: 2rem;
+		margin-right: 2rem;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	main .right {
+		gap: 2rem;
+	}
+
+	.intro-section,
+	.user-actions-section {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
 }
 
 @media only screen and (max-width: 426px) {
@@ -174,18 +254,15 @@ label {
 			'right right right';
 	}
 
-	.intro-section,
-	.user-actions-section {
-		margin-top: 1rem;
-		margin-bottom: 1rem;
-	}
-
 	main .left {
 		height: 50vh;
 	}
 
 	.left p {
+		text-align: center;
 		top: 30%;
+		margin-left: 0;
+		margin-right: 0;
 	}
 
 	.intro-section {
@@ -201,5 +278,6 @@ label {
 
 	.user-actions-section {
 		justify-items: center;
+		margin-left: 0;
 	}
 }
