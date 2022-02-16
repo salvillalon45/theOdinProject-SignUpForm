@@ -5,6 +5,7 @@
 ## Intro
 
 -   The goal of this project was to practice what we have been learning in the Intermediate HTML and CSS modules such as Form Creation, CSS styles & custom properties,positioning, and other concepts. We were to create a sign up form based on a design they gave us
+-   The project can be found here: https://odin-signupform-sv.netlify.app/. It is hosted by Netlify
 -   You can find more on the project here: [The Odin Project - Sign Up Form](https://www.theodinproject.com/paths/full-stack-javascript/courses/intermediate-html-and-css/lessons/sign-up-form)
 
 ## Lessons Learned
@@ -21,6 +22,8 @@
 -   I am really proud how I use CSS grid! The website was really well organized. I was also able to easily apply mobile version. This is the first time I am confident that a website came out really good in mobile and desktop version
 -   I used CSS selectors instead of having to write more HTML markdown
 -   I finally understood how to use relative positioning
+
+## Proud
 
 **In this project, I felt I had a better understanding of all the tools that are available in CSS. I no longer felt I was randomly using CSS properties instead I felt I knw what I was doing!**
 
